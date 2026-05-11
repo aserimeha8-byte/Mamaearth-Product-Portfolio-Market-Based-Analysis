@@ -43,14 +43,16 @@ mamaearth-sql-analysis/
 #### 8.Category: Products are divided into 10 categories including Unknown.
 #### 9.Key Ingredients: Major ingredients that are present in the products.
 
-### Data Cleaning Before SQL execution: 
-#### 1.Handling Duplicates:
-#### 2.Trim Whitespace:
-#### 3.Handling Missing Values:
-#### 4.Correcting Format:
-#### 5.Amending quantity:
+### Data Preprocessing Phase: 
+#### 1.Handling Duplicates: Removed redundant entries to ensure SKU counts and category metrics remained 100% accurate.
+#### 2.Trim Whitespace: Cleaned all categorical columns to prevent fragmentation during SQL GROUP BY operations.
+#### 3.Handling Missing Values: Tagged incomplete categories as "Unknown" and isolated null ratings to avoid skewing mathematical averages.
+#### 4.Correcting Format: Standardized MRP, Discount, and Rating into numeric formats for seamless compatibility with SQL math functions.
+#### 5.Amending quantity: Normalized inconsistent units (ml, g, packs) into a standardized scale for accurate price-per-unit comparisons.
 
 ### 🔬 SQL Techniques Implemented
+#### Importing CSV: Database was already present called maven_advanced_sql for making table schema under database. Table schema was created namely - *mamaearth* with same schema for importing by table data import wizard (importing all 264 entries from csv to sql table schema by right clicking schema and opting table data import wizard which imports and inserts all entries in a particular schema)
+
 Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
 Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.
 Statistical Profiling: Leveraged AVG() and STDDEV() to identify price outliers and average performance benchmarks.
