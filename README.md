@@ -6,11 +6,11 @@
 This project analyzes Mamaearth’s e-commerce containing *250+* entries footprint using Advanced SQL(Joins, Window Functions, Subqueries, CTEs). The goal was to solve a specific business challenge: Identifying the *Sweet Spot* in product pricing and category saturation to drive promotional growth. By querying a catalog of *160+* products across *10* categories, I mapped out the brand's product market positioning and identified untapped opportunities in their product mix.
 
 ### 🎯Business Objectives 
-#### 1.Category Analysis:Quantify SKU depth to identify "Hero" vs. "Under-leveraged" categories.
-#### 2.Pricing Strategy: Segment the portfolio into price buckets to understand the brand’s affordability index.
-#### 3.Customer Sentiment: Analyze rating distributions to find quality gaps and identify high-performing lines.
-#### 4.Correlation Insights: Statistically determine if premium-priced items correlate with higher customer satisfaction.
-#### 5.Discount Analysis: Evaluate the correlation between aggressive discounting and product ratings to measure promotional ROI.
+- 1.Category Analysis:Quantify SKU depth to identify "Hero" vs. "Under-leveraged" categories.
+- 2.Pricing Strategy: Segment the portfolio into price buckets to understand the brand’s affordability index.
+- 3.Customer Sentiment: Analyze rating distributions to find quality gaps and identify high-performing lines.
+- 4.Correlation Insights: Statistically determine if premium-priced items correlate with higher customer satisfaction.
+- 5.Discount Analysis: Evaluate the correlation between aggressive discounting and product ratings to measure promotional ROI.
 
 ### 📁 Project Structure/
 ```
