@@ -1,4 +1,4 @@
-# Mamaearth-Product-Portfolio-Market-Based-Analysis
+<img width="498" height="398" alt="JarredKjackSivRedThistleGIF" src="https://github.com/user-attachments/assets/a345ad42-addf-4a1c-bcc2-90ace811d6d8" /># Mamaearth-Product-Portfolio-Market-Based-Analysis
 <img width="3000" height="1000" alt="image" src="https://github.com/user-attachments/assets/ef7f3c5f-5625-45ad-9c68-45964dea6de3" />
 
 
@@ -34,7 +34,8 @@ mamaearth-sql-analysis/
 │
 └── README.md                      # Business Case & Executive Summary
 ```
-### Data Descrption:
+### 🎞️ Data Descrption:
+
 #### The Kaggle dataset contains 260+ entries depicting 165 products in 10 categories. The following columns description:
 1. **Product Name**: Product description of **165** products.
 2. **Rating**: Column depicts rating provided by customer to the product which they bought. **NULL** values are present but they can have two meanings either rating is 0(NULL) or customer didn't provide any rating(NULL).
