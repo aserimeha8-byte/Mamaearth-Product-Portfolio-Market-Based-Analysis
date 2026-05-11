@@ -13,6 +13,7 @@ This project analyzes Mamaearth’s e-commerce containing *250+* entries footpri
 #### 5.Discount Analysis: Evaluate the correlation between aggressive discounting and product ratings to measure promotional ROI.
 
 ### 📁 Project StructurePlaintextmamaearth-sql-analysis/
+```
 mamaearth-sql-analysis/
 │
 ├── data/
@@ -27,6 +28,7 @@ mamaearth-sql-analysis/
 ├── screenshots/                   # All 18 execution results showing queries & outputs
 │
 └── README.md                      # Business Case & Executive Summary
+```
 🔬 SQL Techniques ImplementedAggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.Statistical Profiling: Leveraged AVG() and STDDEV() to identify price outliers and average performance benchmarks.Data Integrity: Implemented WHERE and IS NULL filters to isolate the 42.4% of products missing consumer data for clean reporting.Complex Joins/Subqueries: Analyzed correlations between pricing tiers and rating averages to see if "Higher Price = Higher Quality" holds true.📊 Findings & Data AnalysisAnalysis AreaSQL Logic UsedKey Business InsightCategory SaturationGROUP BY categoryFace Wash is high-volume/high-competition; Body Lotion shows high ratings with low SKU count (Growth Area).Pricing ArchitectureCASE & CASE WHENMamaearth is a "Premium-Mass" brand. Entry is at ₹250, but the volume is at ₹399.Price-Rating CorrelationNested SubqueriesNo Quality Dilution: Products in the ₹500+ bracket maintain the same 4.9+ rating as the budget range.📈 Strategic Conclusion & RecommendationsDeduction: Mamaearth has successfully democratized premium personal care. My analysis shows that their pricing model is extremely disciplined, with a heavy focus on the mass-middle segment (₹250-₹500). The most significant finding is that Premium Outliers (high-priced items) do not suffer from lower ratings, proving that customers are willing to pay more for Mamaearth's value proposition.Strategic Recommendations:Inventory Expansion: Shift R&D from the saturated Face Wash category to Body Lotions and Sunscreens, which have high satisfaction but low SKU diversity.Review Incentivization: Focus marketing efforts on the 42% of products without ratings. These products represent "silent inventory" that could be underperforming simply due to lack of social proof.Tier-Based Bundling: Use the 4.9-rated budget heroes (₹250-₹300) as "Gateway Products" in bundles with premium 
 
 ### 💡Key Results :
