@@ -1,5 +1,5 @@
 # Mamaearth-Product-Portfolio-Market-Based-Analysis
-<img width="3000" height="1000" alt="image" src="https://github.com/user-attachments/assets/ef7f3c5f-5625-45ad-9c68-45964dea6de3" />
+<img width="3000" height="1250" alt="image" src="https://github.com/user-attachments/assets/ef7f3c5f-5625-45ad-9c68-45964dea6de3" />
 
 
 
@@ -59,13 +59,35 @@ mamaearth-sql-analysis/
 #### After Data Cleaning
 <img width="1902" height="704" alt="image" src="https://github.com/user-attachments/assets/ace582e6-ae29-4fdb-83a5-19ecc0295975" />
 
-### 🤖 SQL Techniques Implemented:
+### 🤖 Prepping data in SQL:
 - **Importing CSV**: Created the **mamaearth table** within the **maven_advanced_sql database**. Successfully migrated all **264** entries via the **Table Data Import Wizard** to establish a structured environment for querying.
 <img width="1085" height="509" alt="Screenshot 2026-05-11 230517" src="https://github.com/user-attachments/assets/694a0637-02bb-46cf-b5d8-88477dd96249" />
 <img width="1104" height="368" alt="Screenshot 2026-05-11 230532" src="https://github.com/user-attachments/assets/1e3fddd2-9d80-4e27-80e4-631eaa4ba08f" />
 
+### **🔍 Project Deep-Dive: Key Queries & Analysis**:
+- **Business Goal**: Product analysis - to know about disctinct products, which category dominates, distribution of products across categories.
+```
+# Finding out: how many unique products are present in the mamaearth brand?
+SELECT DISTINCT product_name 
+FROM mamaearth;
+SELECT COUNT(DISTINCT product_name) 
+FROM mamaearth;
 
+# Finding out: How many distinct categories exist?
+SELECT 
+COUNT(DISTINCT category) 
+FROM mamaearth
+WHERE category <> "Unknown "; 
 
+# Finding out: What is the distribution of products across categories?
+SELECT category,
+COUNT(DISTINCT product_name) as product_count 
+FROM mamaearth
+WHERE category <> "Unknown "
+GROUP BY category
+ORDER BY product_count DESC;
+```
+  
 Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
 Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.
 Statistical Profiling: Leveraged AVG() and STDDEV() to identify price outliers and average performance benchmarks.
