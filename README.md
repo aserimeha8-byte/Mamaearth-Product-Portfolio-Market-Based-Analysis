@@ -65,23 +65,12 @@ mamaearth-sql-analysis/
 <img width="1104" height="368" alt="Screenshot 2026-05-11 230532" src="https://github.com/user-attachments/assets/1e3fddd2-9d80-4e27-80e4-631eaa4ba08f" />
 
 ### **🔍 Project Deep-Dive: Key Queries & Analysis**:
+-**Product & Category Analysis**:
 ```
-Business Question/
-│
-├── 
-│   ├── mamaearth_raw.csv          # Raw data (Downloaded from KAGGLE and uploaded on EXCEL)
-│   └── mamaearth_cleaned.csv     # Processed data (Data Cleaning via EXCEL before SQL ingestion)
-│
-├── sql_queries/
-│   ├── 01_schema_setup.sql        # Database DDL & constraints
-│   ├── 02_category_deepdive.sql   # SKU counts & category distribution
-│   ├── 03_pricing_segments.sql    # CASE statements for market tiering
-│   ├── 04_discount_segments.sql   # Ctes depicting discount analysis
-│   └── 05_correlation_metrics.sql # Rating vs. Price correlation analysis
-│
-├── screenshots/                   # All 30 execution results showing queries & outputs
-│
-└── README.md                      # Business Case & Executive Summary
+Business Question                              | SQL IMPLEMENTATION               | KEY INSIGHTS
+How many unique products are there             | Select (Distinct)                | 165 unique products are there.
+How many Distinct categories present           | Select COUNT(distinct)           | 10 different categories are present including unknown
+Distribution of products across categories     | Select count(distinct) group by  | Facewash have major chunk and Body Wash have least number of products
 
 ```
   
