@@ -1,5 +1,6 @@
 # Mamaearth-Product-Portfolio-Market-Based-Analysis
-<img width="250" height="200" alt="image" src="https://github.com/user-attachments/assets/5577ebfb-bb4e-4b4f-a73b-9012f7c0ead9" />
+<img width="3000" height="1500" alt="image" src="https://github.com/user-attachments/assets/ef7f3c5f-5625-45ad-9c68-45964dea6de3" />
+
 
 
 ## End-to-End SQL Project on Mamaearth brand Product Analysis (Dummy Dataset from Kaggle): Pricing Architecture, Category Dominance, and Consumer Sentiment Analysis
