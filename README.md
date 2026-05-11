@@ -46,11 +46,12 @@ mamaearth-sql-analysis/
 ### Data Preprocessing Phase: 
 #### Before Data Cleaning
 <img width="1894" height="894" alt="image" src="https://github.com/user-attachments/assets/f008dbb0-621d-4de4-be3c-52333ab6cd6e" />
-- 1.**Handling Duplicates**: Removed redundant entries to ensure SKU counts and category metrics remained 100% accurate
-- 2.**Trim Whitespace**: Cleaned all categorical columns to prevent fragmentation during SQL GROUP BY operations.
-- 3.**Handling Missing Values**: Tagged incomplete categories as "Unknown" and isolated null ratings to avoid skewing mathematical averages.
-- 4.**Correcting Format**: Standardized MRP, Discount, and Rating into numeric formats and spellchecks for seamless compatibility with SQL math functions
-- 5.**Amending quantity**: Normalized inconsistent units (ml, g, packs) into a standardized scale for accurate price-per-unit comparisons.
+
+- **Handling Duplicates**: Removed redundant entries to ensure SKU counts and category metrics remained 100% accurate
+- **Trim Whitespace**: Cleaned all categorical columns to prevent fragmentation during SQL GROUP BY operations.
+- **Handling Missing Values**: Tagged incomplete categories as "Unknown" and isolated null ratings to avoid skewing mathematical averages.
+- **Correcting Format**: Standardized MRP, Discount, and Rating into numeric formats and spellchecks for seamless compatibility with SQL math functions
+- **Amending quantity**: Normalized inconsistent units (ml, g, packs) into a standardized scale for accurate price-per-unit comparisons.
 #### After Data Cleaning
 <img width="1902" height="704" alt="image" src="https://github.com/user-attachments/assets/ace582e6-ae29-4fdb-83a5-19ecc0295975" />
 
