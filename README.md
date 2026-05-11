@@ -3,14 +3,14 @@
 ## End-to-End SQL Project on Mamaearth brand Product Analysis (Dummy Dataset from Kaggle): Pricing Architecture, Category Dominance, and Consumer Sentiment Analysis
 
 ### 📊Project Overview: 
-This project analyzes Mamaearth’s e-commerce containing *250+* entries footprint using Advanced SQL(Joins, Window Functions, Subqueries, CTEs). The goal was to solve a specific business challenge: Identifying the *Sweet Spot* in product pricing and category saturation to drive promotional growth. By querying a catalog of *160+* products across *10* categories, I mapped out the brand's product market positioning and identified untapped opportunities in their product mix.
+This project analyzes Mamaearth’s e-commerce containing **250+** entries footprint using Advanced SQL(**Joins, Window Functions, Subqueries, CTEs**). The goal was to solve a specific business challenge: Identifying the *Sweet Spot* in product pricing and category saturation to drive promotional growth. By querying a catalog of **160+** products across **10** categories, I mapped out the brand's product market positioning and identified untapped opportunities in their product mix.
 
 ### 🎯Business Objectives 
-- 1.Category Analysis:Quantify SKU depth to identify "Hero" vs. "Under-leveraged" categories.
-- 2.Pricing Strategy: Segment the portfolio into price buckets to understand the brand’s affordability index.
-- 3.Customer Sentiment: Analyze rating distributions to find quality gaps and identify high-performing lines.
-- 4.Correlation Insights: Statistically determine if premium-priced items correlate with higher customer satisfaction.
-- 5.Discount Analysis: Evaluate the correlation between aggressive discounting and product ratings to measure promotional ROI.
+- 1.**Category Analysis**:Quantify SKU depth to identify "Hero" vs. "Under-leveraged" categories.
+- 2.**Pricing Strategy**: Segment the portfolio into price buckets to understand the brand’s affordability index.
+- 3.**Customer Sentiment**: Analyze rating distributions to find quality gaps and identify high-performing lines.
+- 4.**Correlation Insights**: Statistically determine if premium-priced items correlate with higher customer satisfaction.
+- 5.**Discount Analysis**: Evaluate the correlation between aggressive discounting and product ratings to measure promotional ROI.
 
 ### 📁 Project Structure/
 ```
@@ -33,25 +33,25 @@ mamaearth-sql-analysis/
 ```
 ### Data Descrption:
 #### The Kaggle dataset contains 260+ entries depicting 165 products in 10 categories. The following columns description:
-1. **Product Name**: Product description of 165 products.
-2. **Rating**: Column depicts rating provided by customer to the product which they bought. NULL values are present but they can have two meanings either rating is 0(NULL) or it is empty meaning customer didn't provide any rating(NULL).
-3. **MRP**: Price corresponding to products ranging from 149 to 1749.
-4. **Quantity**: Number ranging from NULL to 400. NULL means weight/volumn was not mentioned in the dataset.
+1. **Product Name**: Product description of **165** products.
+2. **Rating**: Column depicts rating provided by customer to the product which they bought. **NULL** values are present but they can have two meanings either rating is 0(NULL) or customer didn't provide any rating(NULL).
+3. **MRP**: Price corresponding to products ranging from **149 to 1749**.
+4. **Quantity**: Weight/Volumn ranging from **NULL to 400**. NULL means weight/volumn was not mentioned in the dataset.
 5. **Unit**: Unit corresponds to quantity in gram or ml. NULL means weight/volumn was not mentioned in the dataset.
-6. **Type**: Classification in weight/volumn or NULL
-7. **Discount**: It is mentioned as number in decimal form. Ranging from 0 to 28%.
-8. **Category**: Products are divided into 10 categories including Unknown.
-9. **Key Ingredients**: Major ingredients that are present in the products.
+6. **Type**: Classification under weight/volumn or NULL
+7. **Discount**: Discount provided to customers while they were buying certain products. Ranging from **0 to 28%**.
+8. **Category**: Products are divided into **10** categories including Unknown.
+9. **Key Ingredients**: Major ingredients that are present in making of the products.
 
 ### Data Preprocessing Phase: 
-#### 1.Handling Duplicates: Removed redundant entries to ensure SKU counts and category metrics remained 100% accurate.
-#### 2.Trim Whitespace: Cleaned all categorical columns to prevent fragmentation during SQL GROUP BY operations.
-#### 3.Handling Missing Values: Tagged incomplete categories as "Unknown" and isolated null ratings to avoid skewing mathematical averages.
-#### 4.Correcting Format: Standardized MRP, Discount, and Rating into numeric formats for seamless compatibility with SQL math functions.
-#### 5.Amending quantity: Normalized inconsistent units (ml, g, packs) into a standardized scale for accurate price-per-unit comparisons.
+- 1.**Handling Duplicates**: Removed redundant entries to ensure SKU counts and category metrics remained 100% accurate
+- 2.**Trim Whitespace**: Cleaned all categorical columns to prevent fragmentation during SQL GROUP BY operations.
+- 3.**Handling Missing Values**: Tagged incomplete categories as "Unknown" and isolated null ratings to avoid skewing mathematical averages.
+- 4.**Correcting Format**: Standardized MRP, Discount, and Rating into numeric formats and spellchecks for seamless compatibility with SQL math functions.
+- 5.**Amending quantity**: Normalized inconsistent units (ml, g, packs) into a standardized scale for accurate price-per-unit comparisons.
 
 ### 🔬 SQL Techniques Implemented
-#### Importing CSV: Database was already present called maven_advanced_sql for making table schema under database. Table schema was created namely - *mamaearth* with same schema for importing by table data import wizard (importing all 264 entries from csv to sql table schema by right clicking schema and opting table data import wizard which imports and inserts all entries in a particular schema)
+- Importing CSV: Database was already present called **maven_advanced_sql** for making table schema under database. Table schema was created namely - **mamaearth** with same schema for importing by table data import wizard (importing all 264 entries from csv to sql table schema by right clicking schema and opting table data import wizard which imports and inserts all entries in a particular schema)
 
 Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
 Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.
