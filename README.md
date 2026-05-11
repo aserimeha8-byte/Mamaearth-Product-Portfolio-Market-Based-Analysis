@@ -1,4 +1,6 @@
 # Mamaearth-Product-Portfolio-Market-Based-Analysis
+<img width="250" height="200" alt="image" src="https://github.com/user-attachments/assets/5577ebfb-bb4e-4b4f-a73b-9012f7c0ead9" />
+
 
 ## End-to-End SQL Project on Mamaearth brand Product Analysis (Dummy Dataset from Kaggle): Pricing Architecture, Category Dominance, and Consumer Sentiment Analysis
 
@@ -54,8 +56,6 @@ mamaearth-sql-analysis/
 - **Amending quantity**: Normalized inconsistent units (ml, g, packs) into a standardized scale for accurate price-per-unit comparisons.
 #### After Data Cleaning
 <img width="1902" height="704" alt="image" src="https://github.com/user-attachments/assets/ace582e6-ae29-4fdb-83a5-19ecc0295975" />
-
-
 
 ### 🔬 SQL Techniques Implemented
 - Importing CSV: Database was already present called **maven_advanced_sql** for making table schema under database. Table schema was created namely - **mamaearth** with same schema for importing by table data import wizard (importing all 264 entries from csv to sql table schema by right clicking schema and opting table data import wizard which imports and inserts all entries in a particular schema)
