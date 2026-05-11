@@ -67,28 +67,55 @@ mamaearth-sql-analysis/
 ### **🔍 Project Deep-Dive: Key Queries & Analysis**:
 -**Product & Category Analysis**:
 ```
-BUSINESS QUESTION                              | SQL IMPLEMENTATION               | KEY INSIGHTS
-How many unique products are there             | Select (Distinct)                | 165 unique products are there.
-How many Distinct categories present           | Select COUNT(distinct)           | 10 different categories are present including unknown
-Distribution of products across categories     | Select count(distinct) group by  | Facewash have major chunk and Body Wash have least number of products
+BUSINESS QUESTION                           | SQL IMPLEMENTATION               | KEY INSIGHTS
+How many unique products are there          | Select (Distinct)                | 165 unique products are there.
+How many Distinct categories present        | Select COUNT(distinct)           | 10 different categories are present including unknown
+Distribution of products across categories  | Select count(distinct) group by  | Facewash have major chunk and Body Wash have least number of products
 ```
 - **Rating Analysis**:
 ```
-BUSINESS QUESTION                              | SQL IMPLEMENTATION                                | KEY INSIGHTS
-% of products have missing ratings?            | Select round(count()*100/subquery(count())        | 42.4% are missing & 57.6% present under 74.3% rated 5⭐           
-Overall average rating of products?            | Select round(avg())                               | 4.95 is average rating of products.
+BUSINESS QUESTION                     | SQL IMPLEMENTATION                          | KEY INSIGHTS
+% of products have missing ratings?   | Select round(count()*100/subquery(count())  | 42.4% are missing & 57.6% present under 74.3% rated 5⭐           
+Overall average rating of products?   | Select round(avg())                         | 4.95 is average rating of products.
 ```
 -**Pricing Analysis**:
-Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
-Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.
-Statistical Profiling: Leveraged AVG() and STDDEV() to identify price outliers and average performance benchmarks.
-Data Integrity: Implemented WHERE and IS NULL filters to isolate the 42.4% of products missing consumer data for clean reporting.
-Complex Joins/Subqueries: Analyzed correlations between pricing tiers and rating averages to see if "Higher Price = Higher Quality" holds true.
-
-### 📊 Findings & Data Analysis
-Analysis AreaSQL Logic UsedKey Business InsightCategory SaturationGROUP BY categoryFace Wash is high-volume/high-competition; Body Lotion shows high ratings with low SKU count (Growth Area).Pricing ArchitectureCASE & CASE WHENMamaearth is a "Premium-Mass" brand. Entry is at ₹250, but the volume is at ₹399.Price-Rating CorrelationNested SubqueriesNo Quality Dilution: Products in the ₹500+ bracket maintain the same 4.9+ rating as the budget range.
+```
+BUSINESS QUESTION                                           | SQL IMPLEMENTATION                              | KEY INSIGHTS
+Price distribution of products?                             | With cte AS (case when then end)                | Rs500-Rs1000 have majority with 108 products
+                                                              SELECT distinct() group by  
+Average MRP per category?                                   | Select round(avg()) group by                    | Highest - Hair Kit(781.3) and lowest - Body lotion(424)
+Top 10 most expensive products?                             | Select where subquery                           | Price distribution from 1749 to 1199
+categories dominate the low-price segment?                  | With cte1 as (case when then end) cte2(count()  | Face wash dominates 0-250 segment
+                                                              where group by select where subquery             
+% of products fall into budget, mid-range, premium tiers?   | With cte as (case when the end) select          | Budget - 60.61%, Mid-range - 51.52%, 
+                                                              select round(count()*100 / subquery                  Premium - 5.45%
+                                                               group by order by                       
+```
+- **Category Analysis**:
+```
+BUSINESS QUESTION                                  | SQL IMPLEMENTATION                                      | KEY INSIGHTS
+Categories contain the most products?              | Select count(distinct) where group by order by limit    | Face wash contains most products(34)
+Categories have highest average rating?            | With cte as (select round(avg() group by)               | Body wash & body lotion  
+                                                    select where subquery(max)        
+Categories receive the largest discounts?          | Select where subquery(max) group by                     | Hair kit receive largest discount
+Categories contain the most premium products?      | Select where subquery(max)                              | Unknown category have most premium products         
+Categories have the lowest customer satisfaction?  | With cte as(select count() where group by)              | Facewash(20) have lowest customer satisfaction
+                                                       select where subquery(max)                    
+```
+- **Discount Analysis**:
+```
+BUSINESS QUESTION                                  | SQL IMPLEMENTATION                                      | KEY INSIGHTS
+Categories contain the most products?              | Select count(distinct) where group by order by limit    | Face wash contains most products(34)
+Categories have highest average rating?            | With cte as (select round(avg() group by)               | Body wash & body lotion  
+                                                    select where subquery(max)        
+Categories receive the largest discounts?          | Select where subquery(max) group by                     | Hair kit receive largest discount
+Categories contain the most premium products?      | Select where subquery(max)                              | Unknown category have most premium products         
+Products prvides best value?  | With cte as(select count() where group by)              | Facewash(20) have lowest customer satisfaction
+                                                       select where subquery(max)                    
+```
 
 ### 📈 Strategic Conclusion & Recommendations Deduction: 
+
 Mamaearth has successfully democratized premium personal care. My analysis shows that their pricing model is extremely disciplined, with a heavy focus on the mass-middle segment (₹250-₹500). The most significant finding is that Premium Outliers (high-priced items) do not suffer from lower ratings, proving that customers are willing to pay more for Mamaearth's value proposition.
 ### Strategic Recommendations:
 Inventory Expansion: Shift R&D from the saturated Face Wash category to Body Lotions and Sunscreens, which have high satisfaction but low SKU diversity.
