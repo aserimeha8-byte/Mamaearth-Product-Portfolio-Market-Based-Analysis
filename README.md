@@ -65,27 +65,24 @@ mamaearth-sql-analysis/
 <img width="1104" height="368" alt="Screenshot 2026-05-11 230532" src="https://github.com/user-attachments/assets/1e3fddd2-9d80-4e27-80e4-631eaa4ba08f" />
 
 ### **🔍 Project Deep-Dive: Key Queries & Analysis**:
-- **Business Goal**: Product analysis - to know about disctinct products, which category dominates, distribution of products across categories.
 ```
-# Finding out: how many unique products are present in the mamaearth brand?
-SELECT DISTINCT product_name 
-FROM mamaearth;
-SELECT COUNT(DISTINCT product_name) 
-FROM mamaearth;
+Business Question/
+│
+├── 
+│   ├── mamaearth_raw.csv          # Raw data (Downloaded from KAGGLE and uploaded on EXCEL)
+│   └── mamaearth_cleaned.csv     # Processed data (Data Cleaning via EXCEL before SQL ingestion)
+│
+├── sql_queries/
+│   ├── 01_schema_setup.sql        # Database DDL & constraints
+│   ├── 02_category_deepdive.sql   # SKU counts & category distribution
+│   ├── 03_pricing_segments.sql    # CASE statements for market tiering
+│   ├── 04_discount_segments.sql   # Ctes depicting discount analysis
+│   └── 05_correlation_metrics.sql # Rating vs. Price correlation analysis
+│
+├── screenshots/                   # All 30 execution results showing queries & outputs
+│
+└── README.md                      # Business Case & Executive Summary
 
-# Finding out: How many distinct categories exist?
-SELECT 
-COUNT(DISTINCT category) 
-FROM mamaearth
-WHERE category <> "Unknown "; 
-
-# Finding out: What is the distribution of products across categories?
-SELECT category,
-COUNT(DISTINCT product_name) as product_count 
-FROM mamaearth
-WHERE category <> "Unknown "
-GROUP BY category
-ORDER BY product_count DESC;
 ```
   
 Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
