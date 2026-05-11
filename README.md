@@ -33,15 +33,15 @@ mamaearth-sql-analysis/
 ```
 ### Data Descrption:
 #### The Kaggle dataset contains 260+ entries depicting 165 products in 10 categories. The following columns description:
-- 1. **Product Name**: Product description of 165 products.
-  2. **Rating**: Column depicts rating provided by customer to the product which they bought. NULL values are present but they can have two meanings either rating is 0(NULL) or it is empty meaning customer didn't provide any rating(NULL).
-  3. **MRP**: Price corresponding to products ranging from 149 to 1749.
-  4. **Quantity**: Number ranging from NULL to 400. NULL means weight/volumn was not mentioned in the dataset.
-  5. **Unit**: Unit corresponds to quantity in gram or ml. NULL means weight/volumn was not mentioned in the dataset.
-  6. **Type**: Classification in weight/volumn or NULL
-  7. **Discount**: It is mentioned as number in decimal form. Ranging from 0 to 28%.
-  8. **Category**: Products are divided into 10 categories including Unknown.
-  9. **Key Ingredients**: Major ingredients that are present in the products.
+1. **Product Name**: Product description of 165 products.
+2. **Rating**: Column depicts rating provided by customer to the product which they bought. NULL values are present but they can have two meanings either rating is 0(NULL) or it is empty meaning customer didn't provide any rating(NULL).
+3. **MRP**: Price corresponding to products ranging from 149 to 1749.
+4. **Quantity**: Number ranging from NULL to 400. NULL means weight/volumn was not mentioned in the dataset.
+5. **Unit**: Unit corresponds to quantity in gram or ml. NULL means weight/volumn was not mentioned in the dataset.
+6. **Type**: Classification in weight/volumn or NULL
+7. **Discount**: It is mentioned as number in decimal form. Ranging from 0 to 28%.
+8. **Category**: Products are divided into 10 categories including Unknown.
+9. **Key Ingredients**: Major ingredients that are present in the products.
 
 ### Data Preprocessing Phase: 
 #### 1.Handling Duplicates: Removed redundant entries to ensure SKU counts and category metrics remained 100% accurate.
