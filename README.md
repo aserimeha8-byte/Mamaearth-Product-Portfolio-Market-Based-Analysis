@@ -1,4 +1,4 @@
-<img width="498" height="398" alt="JarredKjackSivRedThistleGIF" src="https://github.com/user-attachments/assets/a345ad42-addf-4a1c-bcc2-90ace811d6d8" /># Mamaearth-Product-Portfolio-Market-Based-Analysis
+# Mamaearth-Product-Portfolio-Market-Based-Analysis
 <img width="3000" height="1000" alt="image" src="https://github.com/user-attachments/assets/ef7f3c5f-5625-45ad-9c68-45964dea6de3" />
 
 
@@ -34,7 +34,7 @@ mamaearth-sql-analysis/
 │
 └── README.md                      # Business Case & Executive Summary
 ```
-### 🎞️ Data Descrption:
+### 📝 Data Descrption:
 
 #### The Kaggle dataset contains 260+ entries depicting 165 products in 10 categories. The following columns description:
 1. **Product Name**: Product description of **165** products.
@@ -47,7 +47,7 @@ mamaearth-sql-analysis/
 8. **Category**: Products are divided into **10** categories including Unknown.
 9. **Key Ingredients**: Major ingredients that are present in making of the products.
 
-### Data Preprocessing Phase: 
+### 🧹 Data Preprocessing Phase: 
 #### Before Data Cleaning
 <img width="1894" height="894" alt="image" src="https://github.com/user-attachments/assets/f008dbb0-621d-4de4-be3c-52333ab6cd6e" />
 
@@ -59,8 +59,12 @@ mamaearth-sql-analysis/
 #### After Data Cleaning
 <img width="1902" height="704" alt="image" src="https://github.com/user-attachments/assets/ace582e6-ae29-4fdb-83a5-19ecc0295975" />
 
-### 🔬 SQL Techniques Implemented
-- Importing CSV: Database was already present called **maven_advanced_sql** for making table schema under database. Table schema was created namely - **mamaearth** with same schema for importing by table data import wizard (importing all 264 entries from csv to sql table schema by right clicking schema and opting table data import wizard which imports and inserts all entries in a particular schema)
+### 🤖 SQL Techniques Implemented:
+- **Importing CSV**: Created the **mamaearth table** within the **maven_advanced_sql database**. Successfully migrated all **264** entries via the **Table Data Import Wizard** to establish a structured environment for querying.
+<img width="1085" height="509" alt="Screenshot 2026-05-11 230517" src="https://github.com/user-attachments/assets/694a0637-02bb-46cf-b5d8-88477dd96249" />
+<img width="1104" height="368" alt="Screenshot 2026-05-11 230532" src="https://github.com/user-attachments/assets/1e3fddd2-9d80-4e27-80e4-631eaa4ba08f" />
+
+
 
 Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
 Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.
