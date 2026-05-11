@@ -67,13 +67,18 @@ mamaearth-sql-analysis/
 ### **🔍 Project Deep-Dive: Key Queries & Analysis**:
 -**Product & Category Analysis**:
 ```
-Business Question                              | SQL IMPLEMENTATION               | KEY INSIGHTS
+BUSINESS QUESTION                              | SQL IMPLEMENTATION               | KEY INSIGHTS
 How many unique products are there             | Select (Distinct)                | 165 unique products are there.
 How many Distinct categories present           | Select COUNT(distinct)           | 10 different categories are present including unknown
 Distribution of products across categories     | Select count(distinct) group by  | Facewash have major chunk and Body Wash have least number of products
-
 ```
-  
+- **Rating Analysis**:
+```
+BUSINESS QUESTION                              | SQL IMPLEMENTATION                                | KEY INSIGHTS
+% of products have missing ratings?            | Select round(count()*100/subquery(count())        | 42.4% are missing & 57.6% present under 74.3% rated 5⭐           
+Overall average rating of products?            | Select round(avg())                               | 4.95 is average rating of products.
+```
+-**Pricing Analysis**:
 Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
 Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.
 Statistical Profiling: Leveraged AVG() and STDDEV() to identify price outliers and average performance benchmarks.
