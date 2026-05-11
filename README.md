@@ -65,7 +65,7 @@ mamaearth-sql-analysis/
 <img width="1104" height="368" alt="Screenshot 2026-05-11 230532" src="https://github.com/user-attachments/assets/1e3fddd2-9d80-4e27-80e4-631eaa4ba08f" />
 
 ### **🔍 Project Deep-Dive: Key Queries & Analysis**:
--**Product & Category Analysis**:
+- **Product & Category Analysis**:
 ```
 BUSINESS QUESTION                           | SQL IMPLEMENTATION               | KEY INSIGHTS
 How many unique products are there          | Select (Distinct)                | 165 unique products are there.
@@ -78,7 +78,7 @@ BUSINESS QUESTION                     | SQL IMPLEMENTATION                      
 % of products have missing ratings?   | Select round(count()*100/subquery(count())  | 42.4% are missing & 57.6% present under 74.3% rated 5⭐           
 Overall average rating of products?   | Select round(avg())                         | 4.95 is average rating of products.
 ```
--**Pricing Analysis**:
+- **Pricing Analysis**:
 ```
 BUSINESS QUESTION                                           | SQL IMPLEMENTATION                              | KEY INSIGHTS
 Price distribution of products?                             | With cte AS (case when then end)                | Rs500-Rs1000 have majority with 108 products
