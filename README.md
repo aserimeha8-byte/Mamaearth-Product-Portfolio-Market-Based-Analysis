@@ -12,24 +12,60 @@ This project analyzes Mamaearth’s e-commerce containing *250+* entries footpri
 #### 4.Correlation Insights: Statistically determine if premium-priced items correlate with higher customer satisfaction.
 #### 5.Discount Analysis: Evaluate the correlation between aggressive discounting and product ratings to measure promotional ROI.
 
-### 📁 Project StructurePlaintextmamaearth-sql-analysis/
+### 📁 Project Structure/
 ```
 mamaearth-sql-analysis/
 │
 ├── data/
-│   └── mamaearth_cleaned.csv      # Processed data (Handled via Excel before SQL ingestion)
+│   ├── mamaearth_raw.csv          # Raw data (Downloaded from KAGGLE and uploaded on EXCEL)
+│   └── mamaearth_cleaned.csv      # Processed data (Data Cleaning via EXCEL before SQL ingestion)
 │
 ├── sql_queries/
 │   ├── 01_schema_setup.sql        # Database DDL & constraints
 │   ├── 02_category_deepdive.sql   # SKU counts & category distribution
 │   ├── 03_pricing_segments.sql    # CASE statements for market tiering
-│   └── 04_correlation_metrics.sql # Rating vs. Price correlation analysis
+│   ├── 04_discount_segments.sql   # Ctes depicting discount analysis
+│   └── 05_correlation_metrics.sql # Rating vs. Price correlation analysis
 │
-├── screenshots/                   # All 18 execution results showing queries & outputs
+├── screenshots/                   # All 30 execution results showing queries & outputs
 │
 └── README.md                      # Business Case & Executive Summary
 ```
-🔬 SQL Techniques ImplementedAggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.Statistical Profiling: Leveraged AVG() and STDDEV() to identify price outliers and average performance benchmarks.Data Integrity: Implemented WHERE and IS NULL filters to isolate the 42.4% of products missing consumer data for clean reporting.Complex Joins/Subqueries: Analyzed correlations between pricing tiers and rating averages to see if "Higher Price = Higher Quality" holds true.📊 Findings & Data AnalysisAnalysis AreaSQL Logic UsedKey Business InsightCategory SaturationGROUP BY categoryFace Wash is high-volume/high-competition; Body Lotion shows high ratings with low SKU count (Growth Area).Pricing ArchitectureCASE & CASE WHENMamaearth is a "Premium-Mass" brand. Entry is at ₹250, but the volume is at ₹399.Price-Rating CorrelationNested SubqueriesNo Quality Dilution: Products in the ₹500+ bracket maintain the same 4.9+ rating as the budget range.📈 Strategic Conclusion & RecommendationsDeduction: Mamaearth has successfully democratized premium personal care. My analysis shows that their pricing model is extremely disciplined, with a heavy focus on the mass-middle segment (₹250-₹500). The most significant finding is that Premium Outliers (high-priced items) do not suffer from lower ratings, proving that customers are willing to pay more for Mamaearth's value proposition.Strategic Recommendations:Inventory Expansion: Shift R&D from the saturated Face Wash category to Body Lotions and Sunscreens, which have high satisfaction but low SKU diversity.Review Incentivization: Focus marketing efforts on the 42% of products without ratings. These products represent "silent inventory" that could be underperforming simply due to lack of social proof.Tier-Based Bundling: Use the 4.9-rated budget heroes (₹250-₹300) as "Gateway Products" in bundles with premium 
+### Data Descrption:
+#### The Kaggle dataset contains 260+ entries depicting 165 products in 10 categories. The following columns description:
+#### 1. Product Name: Product description of 165 products.
+#### 2.Rating: Column depicts rating provided by customer to the product which they bought. NULL values are present but they can have two meanings either rating is 0(NULL) or it is empty meaning customer didn't provide any rating(NULL).
+#### 3.MRP: Price corresponding to products ranging from 149 to 1749.
+#### 4.Quantity: Number ranging from NULL to 400. NULL means weight/volumn was not mentioned in the dataset.
+#### 5.Unit: Unit corresponds to quantity in gram or ml. NULL means weight/volumn was not mentioned in the dataset.
+#### 6.Type: Classification in weight/volumn or NULL
+#### 7.Discount: It is mentioned as number in decimal form. Ranging from 0 to 28%.
+#### 8.Category: Products are divided into 10 categories including Unknown.
+#### 9.Key Ingredients: Major ingredients that are present in the products.
+
+### Data Cleaning Before SQL execution: 
+#### 1.Handling Duplicates:
+#### 2.Trim Whitespace:
+#### 3.Handling Missing Values:
+#### 4.Correcting Format:
+#### 5.Amending quantity:
+
+### 🔬 SQL Techniques Implemented
+Aggregations & Grouping: Used COUNT(DISTINCT) and GROUP BY to map inventory depth across 14 categories.
+Market Segmentation: Built logic using CASE WHEN to bucket products into Budget (Entry), Mid-range (Volume), and Premium (AOV) tiers.
+Statistical Profiling: Leveraged AVG() and STDDEV() to identify price outliers and average performance benchmarks.
+Data Integrity: Implemented WHERE and IS NULL filters to isolate the 42.4% of products missing consumer data for clean reporting.
+Complex Joins/Subqueries: Analyzed correlations between pricing tiers and rating averages to see if "Higher Price = Higher Quality" holds true.
+
+### 📊 Findings & Data Analysis
+Analysis AreaSQL Logic UsedKey Business InsightCategory SaturationGROUP BY categoryFace Wash is high-volume/high-competition; Body Lotion shows high ratings with low SKU count (Growth Area).Pricing ArchitectureCASE & CASE WHENMamaearth is a "Premium-Mass" brand. Entry is at ₹250, but the volume is at ₹399.Price-Rating CorrelationNested SubqueriesNo Quality Dilution: Products in the ₹500+ bracket maintain the same 4.9+ rating as the budget range.
+
+### 📈 Strategic Conclusion & Recommendations Deduction: 
+Mamaearth has successfully democratized premium personal care. My analysis shows that their pricing model is extremely disciplined, with a heavy focus on the mass-middle segment (₹250-₹500). The most significant finding is that Premium Outliers (high-priced items) do not suffer from lower ratings, proving that customers are willing to pay more for Mamaearth's value proposition.
+### Strategic Recommendations:
+Inventory Expansion: Shift R&D from the saturated Face Wash category to Body Lotions and Sunscreens, which have high satisfaction but low SKU diversity.
+Review Incentivization: Focus marketing efforts on the 42% of products without ratings. These products represent "silent inventory" that could be underperforming simply due to lack of social proof.
+Tier-Based Bundling: Use the 4.9-rated budget heroes (₹250-₹300) as "Gateway Products" in bundles with premium outliers (₹600+) to increase the Average Order Value (AOV).
 
 ### 💡Key Results :
 #### 📈 Volume Drivers: Face Wash (24 SKUs) and Hair Shampoo (18 SKUs) represent the core of the portfolio, accounting for the highest catalog density.
@@ -37,5 +73,3 @@ mamaearth-sql-analysis/
 #### ⭐ Brand Loyalty: The portfolio maintains a weighted average rating of 4.95, indicating extreme consistency in product quality.
 #### 🔍 Data Opportunity: Discovered that 42.4% of products have missing ratings, flagging a major opportunity to implement review-collection automation.
 
-
-outliers (₹600+) to increase the Average Order Value (AOV).
