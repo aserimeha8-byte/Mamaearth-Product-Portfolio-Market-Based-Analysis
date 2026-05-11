@@ -49,6 +49,12 @@ mamaearth-sql-analysis/
 - 3.**Handling Missing Values**: Tagged incomplete categories as "Unknown" and isolated null ratings to avoid skewing mathematical averages.
 - 4.**Correcting Format**: Standardized MRP, Discount, and Rating into numeric formats and spellchecks for seamless compatibility with SQL math functions.
 - 5.**Amending quantity**: Normalized inconsistent units (ml, g, packs) into a standardized scale for accurate price-per-unit comparisons.
+#### Before 
+<img width="1894" height="894" alt="image" src="https://github.com/user-attachments/assets/f008dbb0-621d-4de4-be3c-52333ab6cd6e" />
+#### After 
+<img width="1902" height="704" alt="image" src="https://github.com/user-attachments/assets/ace582e6-ae29-4fdb-83a5-19ecc0295975" />
+
+
 
 ### 🔬 SQL Techniques Implemented
 - Importing CSV: Database was already present called **maven_advanced_sql** for making table schema under database. Table schema was created namely - **mamaearth** with same schema for importing by table data import wizard (importing all 264 entries from csv to sql table schema by right clicking schema and opting table data import wizard which imports and inserts all entries in a particular schema)
