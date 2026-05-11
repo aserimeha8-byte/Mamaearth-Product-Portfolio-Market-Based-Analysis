@@ -1,5 +1,5 @@
 # Mamaearth-Product-Portfolio-Market-Based-Analysis
-<img width="3000" height="750" alt="image" src="https://github.com/user-attachments/assets/ef7f3c5f-5625-45ad-9c68-45964dea6de3" />
+<img width="3000" height="1000" alt="image" src="https://github.com/user-attachments/assets/ef7f3c5f-5625-45ad-9c68-45964dea6de3" />
 
 
 
