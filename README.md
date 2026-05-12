@@ -87,7 +87,7 @@ Average MRP per category?                                   | Select round(avg()
 Top 10 most expensive products?                             | Select where subquery                           | Price distribution from 1749 to 1199
 categories dominate the low-price segment?                  | With cte1 as (case when then end) cte2(count()  | Face wash dominates 0-250 segment
                                                               where group by select where subquery             
-% of products fall into budget, mid-range, premium tiers?   | With cte as (case when the end) select          | Budget - 60.61%, Mid-range - 51.52%, 
+% of products fall into budget, mid-range, premium tiers?   | With cte as (case when then end) select         | Budget - 60.61%, Mid-range - 51.52%, 
                                                               select round(count()*100 / subquery                  Premium - 5.45%
                                                                group by order by                       
 ```
@@ -104,16 +104,51 @@ Categories have the lowest customer satisfaction?  | With cte as(select count() 
 ```
 - **Discount Analysis**:
 ```
-BUSINESS QUESTION                                  | SQL IMPLEMENTATION                                      | KEY INSIGHTS
-Categories contain the most products?              | Select count(distinct) where group by order by limit    | Face wash contains most products(34)
-Categories have highest average rating?            | With cte as (select round(avg() group by)               | Body wash & body lotion  
-                                                    select where subquery(max)        
-Categories receive the largest discounts?          | Select where subquery(max) group by                     | Hair kit receive largest discount
-Categories contain the most premium products?      | Select where subquery(max)                              | Unknown category have most premium products         
-Products prvides best value?  | With cte as(select count() where group by)              | Facewash(20) have lowest customer satisfaction
-                                                       select where subquery(max)                    
+BUSINESS QUESTION                                    | SQL IMPLEMENTATION                            | KEY INSIGHTS
+Average discount across products?                    | Select round(avg()) group by                  | Returns list of products with average discounts
+Number of discount and non-discount products?        | Select (case when then else end)              | Non-discounted - 188 & Discounted - 76 
+                                                          count() group by       
+Categories receive highest promotional discounts?    | Select round() where subquery(max()) limit    | Hair kit(28%) 
+Higher priced products = Higher discounts?           | With cte as(select (case when then end))      | Calculated product count, average discount & max discount   
+                                                       select count() group by order by                     Yes, positive correlation is there.
+% of Products sold without discounts?                | Select concat(round(count()                   | 71.21% product are sold without discount
+                                                         /subquery (count()))) where
 ```
-
+- **Ingredient Analysis**:
+```
+BUSINESS QUESTION                           | SQL IMPLEMENTATION                                | KEY INSIGHTS
+Ingredients appear in top-rated products?   | Select distinct where                             | Turmeric, niacinamide and many more appears in top-rated products 
+Price per gram/ml across products?          | Select ceil() where (is not null) order by desc   | Returns list of products mrp/quantity. Ranging from Rs340 to Rs1.
+```
+- **Best Value Analysis**:
+```
+* Best value = High rating + High Discount*
+* Best value for Money = lowest price_per_unit (mrp/quantity)*
+BUSINESS QUESTION                        | SQL IMPLEMENTATION                                     | KEY INSIGHTS
+Products provides best value?            | Select round() where subquery1 (select Max())          | Vitamin C Body wash have highest discount(28%) & rating(5⭐)
+                                            and subquery2 (select max())
+Category offer best value for money?     | With cte as(select ceil() where(is not null)           | Body lotion offers best value for money
+                                           order by) select count() where group by order by desc   
+```
+- **Top Promotional Products**: 
+```
+BUSINESS QUESTION                       | SQL IMPLEMENTATION                                    | KEY INSIGHTS
+Products having minimum discount 20%    | Select where condition1 and condition2 order by desc  | Returns 17 prodcuts list for promotional content
+and rating greater than 4⭐
+```
+- **Category Market Share**:
+```
+BUSINESS QUESTION            | SQL IMPLEMENTATION                           | KEY INSIGHTS
+Categories market share ?    | Select round(100*count()/sum(count())        | Returns list with face wash(19.09%) highest market share and
+                                 over()) where group by order by              body wash(5%) lowest market share
+```
+- **Correlation Analysis**:
+```
+*Price and discount*
+BUSINESS QUESTION                 | SQL IMPLEMENTATION                          | KEY INSIGHTS
+Determining relaionship between   | Select round(avg() - (avg()*avg()) /        | Moderate positive correlation (0.65) was observed between product price
+price and discount                  Stddev()*Stddev() where(is not null)           & discount, suggesting that higher priced products are more likely                                                                                                             to receive promotional discounts                                             
+```                 
 ### 📈 Strategic Conclusion & Recommendations Deduction: 
 
 Mamaearth has successfully democratized premium personal care. My analysis shows that their pricing model is extremely disciplined, with a heavy focus on the mass-middle segment (₹250-₹500). The most significant finding is that Premium Outliers (high-priced items) do not suffer from lower ratings, proving that customers are willing to pay more for Mamaearth's value proposition.
