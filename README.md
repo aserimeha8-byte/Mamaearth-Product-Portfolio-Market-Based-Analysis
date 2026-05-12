@@ -157,8 +157,10 @@ Inventory Expansion: Shift R&D from the saturated Face Wash category to Body Lot
 Review Incentivization: Focus marketing efforts on the 42% of products without ratings. These products represent "silent inventory" that could be underperforming simply due to lack of social proof.
 Tier-Based Bundling: Use the 4.9-rated budget heroes (₹250-₹300) as "Gateway Products" in bundles with premium outliers (₹600+) to increase the Average Order Value (AOV).
 
-### 💡Key Results :
-#### 📈 Volume Drivers: Face Wash (24 SKUs) and Hair Shampoo (18 SKUs) represent the core of the portfolio, accounting for the highest catalog density.
+### 🎯 Key Strategic Insights (The "So-What" Factor)
+#### The Discount Lever: Strategic Scaling
+- **Insight**: Data proves a $0.65$ correlation between price and discounts.
+- **Takeaway**: Mamaearth doesn't discount for "affordability"—they discount for premium conversion. Budget items stay at full price to protect margins, while high-ticket items (Hair Kits) get up to 28% off to eliminate price as a barrier.
 #### 💰 Pricing Sweet Spot: 60% of top-rated inventory is priced in the ₹250–₹500 range, proving it as the primary revenue engine.
 #### ⭐ Brand Loyalty: The portfolio maintains a weighted average rating of 4.95, indicating extreme consistency in product quality.
 #### 🔍 Data Opportunity: Discovered that 42.4% of products have missing ratings, flagging a major opportunity to implement review-collection automation.
