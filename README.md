@@ -149,19 +149,17 @@ BUSINESS QUESTION                 | SQL IMPLEMENTATION                          
 Determining relaionship between   | Select round(avg() - (avg()*avg()) /        | Moderate positive correlation (0.65) was observed between product price
 price and discount                  Stddev()*Stddev() where(is not null)           & discount, suggesting that higher priced products are more likely                                                                                                             to receive promotional discounts                                             
 ```                 
-### 📈 Strategic Conclusion & Recommendations Deduction: 
-
-Mamaearth has successfully democratized premium personal care. My analysis shows that their pricing model is extremely disciplined, with a heavy focus on the mass-middle segment (₹250-₹500). The most significant finding is that Premium Outliers (high-priced items) do not suffer from lower ratings, proving that customers are willing to pay more for Mamaearth's value proposition.
-### Strategic Recommendations:
-Inventory Expansion: Shift R&D from the saturated Face Wash category to Body Lotions and Sunscreens, which have high satisfaction but low SKU diversity.
-Review Incentivization: Focus marketing efforts on the 42% of products without ratings. These products represent "silent inventory" that could be underperforming simply due to lack of social proof.
-Tier-Based Bundling: Use the 4.9-rated budget heroes (₹250-₹300) as "Gateway Products" in bundles with premium outliers (₹600+) to increase the Average Order Value (AOV).
-
 ### 🎯 Key Strategic Insights (The "So-What" Factor)
-#### The Discount Lever: Strategic Scaling
+####💰 The Discount Lever: Strategic Scaling
 - **Insight**: Data proves a $0.65$ correlation between price and discounts.
 - **Takeaway**: Mamaearth doesn't discount for "affordability"—they discount for premium conversion. Budget items stay at full price to protect margins, while high-ticket items (Hair Kits) get up to 28% off to eliminate price as a barrier.
-#### 💰 Pricing Sweet Spot: 60% of top-rated inventory is priced in the ₹250–₹500 range, proving it as the primary revenue engine.
-#### ⭐ Brand Loyalty: The portfolio maintains a weighted average rating of 4.95, indicating extreme consistency in product quality.
-#### 🔍 Data Opportunity: Discovered that 42.4% of products have missing ratings, flagging a major opportunity to implement review-collection automation.
+#### 📜 The Review Gap: The "Silent" Catalog
+- **Insight**: 42.4% of products have zero customer ratings despite high inventory volume.
+- **Takeaway**: The brand has a Social Proof Gap, not a quality problem. With an average rating of 4.95, the brand is sitting on "silent winners." Incentivizing reviews for these products is the fastest way to drive organic growth.
+#### 🛒 Category Fatigue: The Face Wash Trap
+- **Insight**: Face Wash is the market leader (19.09% share) but also shows the highest customer dissatisfaction.
+- **Takeaway**: The category is over-saturated. Growth is stagnating here while Body Lotions are under-leveraged—boasting the highest "Value-for-Money" index and consistent 5-star ratings.
+#### 🎖️ The Gateway Effect: The ₹250–₹500 Sweet Spot
+- **Insight**: 60% of top-rated products sit in the Mid-Range tier.
+- **Takeaway**: These are your "Acquisition Heroes." These products build trust with new customers and should be used as anchors in bundles to upsell higher-margin, premium items.
 
