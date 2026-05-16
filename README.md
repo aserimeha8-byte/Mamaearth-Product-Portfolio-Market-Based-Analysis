@@ -3,7 +3,7 @@
 
 
 
-## End-to-End SQL Project on Mamaearth brand Product Analysis (Dummy Dataset from Kaggle): Pricing Architecture, Category Dominance, and Consumer Sentiment Analysis
+## Exploratory Data Analysis Mamaearth's Product Analysis (Dummy Dataset from Kaggle) using SQL: Pricing Architecture, Category Dominance, and Consumer Sentiment Analysis
 
 ### 📊Project Overview: 
 This project analyzes Mamaearth’s e-commerce containing **250+** entries footprint using Advanced SQL(**Joins, Window Functions, Subqueries, CTEs**). The goal was to solve a specific business challenge: Identifying the *Sweet Spot* in product pricing and category saturation to drive promotional growth. By querying a catalog of **160+** products across **10** categories, I mapped out the brand's product market positioning and identified untapped opportunities in their product mix.
